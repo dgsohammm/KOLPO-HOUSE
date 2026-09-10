@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { ArrowUp } from 'lucide-react';
 
 interface FooterProps {
@@ -19,9 +20,9 @@ export default function Footer({ mode, onOpenContact }: FooterProps) {
         {/* Top Tier */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           <div className="md:col-span-6 space-y-4">
-            <div className="font-display-luxury text-3xl md:text-4xl font-semibold tracking-wider">
+            <Link href="/" className="inline-block font-display-luxury text-3xl md:text-4xl font-semibold tracking-wider hover:opacity-85 transition-opacity">
               KOLPO HOUSE
-            </div>
+            </Link>
             <p className="font-serif-editorial text-lg md:text-xl text-[#41413D] italic max-w-md font-light">
               &ldquo;We build brands, not just content.&rdquo;
             </p>
@@ -36,29 +37,35 @@ export default function Footer({ mode, onOpenContact }: FooterProps) {
             </div>
             <ul className="space-y-2 text-xs font-sans">
               <li>
-                <a href="#work" className="hover:text-[#41413D] transition-colors">
+                <Link href="/about" className="font-medium text-[#292A28] hover:text-[#41413D] transition-colors flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#292A28]" />
+                  About Kolpo House
+                </Link>
+              </li>
+              <li>
+                <Link href="/#work" className="hover:text-[#41413D] transition-colors">
                   Selected Work
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#capabilities" className="hover:text-[#41413D] transition-colors">
+                <Link href="/#capabilities" className="hover:text-[#41413D] transition-colors">
                   Four Visual Worlds
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#41413D] transition-colors">
+                <Link href="/#process" className="hover:text-[#41413D] transition-colors">
                   Process Journey
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#disciplines" className="hover:text-[#41413D] transition-colors">
+                <Link href="/#disciplines" className="hover:text-[#41413D] transition-colors">
                   Four Disciplines
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#belief" className="hover:text-[#41413D] transition-colors">
+                <Link href="/#belief" className="hover:text-[#41413D] transition-colors">
                   Studio Belief
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
