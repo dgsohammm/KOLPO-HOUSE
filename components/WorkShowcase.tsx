@@ -120,19 +120,19 @@ export default function WorkShowcase({ mode }: WorkShowcaseProps) {
   };
 
   return (
-    <section id="work" className="py-24 md:py-36 px-4 md:px-8 lg:px-12 bg-[#F5F2EA] transition-colors duration-1000">
-      <div className="max-w-7xl mx-auto">
+    <section id="work" className="py-24 md:py-36 3xl:py-48 px-4 md:px-8 lg:px-12 3xl:px-20 bg-[#F5F2EA] transition-colors duration-1000">
+      <div className="tv-container mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-[#292A28]/15 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-[#292A28]/15 mb-12 3xl:mb-16">
           <div>
-            <div className="text-[10px] tracking-[0.3em] uppercase text-[#41413D]/70 font-mono mb-2">
+            <div className="text-[10px] 3xl:text-xs tracking-[0.3em] uppercase text-[#41413D]/70 font-mono mb-2">
               06 // CURATED ARCHIVE
             </div>
-            <h2 className="font-display-luxury text-3xl sm:text-5xl md:text-6xl text-[#292A28] leading-[0.98]">
+            <h2 className="font-display-luxury text-3xl sm:text-5xl md:text-6xl 3xl:text-7xl 4xl:text-8xl text-[#292A28] leading-[0.98]">
               SELECTED WORK & BLUEPRINTS
             </h2>
           </div>
-          <div className="max-w-md text-xs sm:text-sm text-[#41413D] leading-relaxed font-light">
+          <div className="max-w-md 3xl:max-w-xl text-xs sm:text-sm 3xl:text-base text-[#41413D] leading-relaxed font-light">
             We preserve absolute client confidentiality. Explore our case study architecture and strategic frameworks below. Click any case to expand into its complete strategic dissection.
           </div>
         </div>

@@ -16,6 +16,7 @@ import GrowthConstellation from '@/components/GrowthConstellation';
 import FinalCTA from '@/components/FinalCTA';
 import ContactModal from '@/components/ContactModal';
 import Footer from '@/components/Footer';
+import ViewportAdaptation from '@/components/ViewportAdaptation';
 
 export default function HomePage() {
   const mode = 'move' as const;
@@ -95,6 +96,9 @@ export default function HomePage() {
         isOpen={contactOpen}
         onClose={() => setContactOpen(false)}
       />
+
+      {/* Screen Size & Multi-Platform Adaptation Indicator */}
+      <ViewportAdaptation />
     </main>
   );
 }

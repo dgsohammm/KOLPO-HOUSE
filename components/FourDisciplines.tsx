@@ -12,6 +12,8 @@ interface Discipline {
   id: string;
   code: string;
   name: string;
+  tabName: string;
+  shortName: string;
   icon: any;
   mandate: string;
   focus: string[];
@@ -24,6 +26,8 @@ const disciplines: Discipline[] = [
     id: 'creative-strategy',
     code: '01',
     name: 'CREATIVE & STRATEGY',
+    tabName: 'CREATIVE & STRATEGY',
+    shortName: 'CREATIVE',
     icon: Compass,
     mandate:
       'Guiding intellectual rigor, brand world-building, high-level messaging, art direction, and conceptual storytelling.',
@@ -40,6 +44,8 @@ const disciplines: Discipline[] = [
     id: 'operations-delivery',
     code: '02',
     name: 'OPERATIONS & DELIVERY',
+    tabName: 'OPERATIONS & DELIVERY',
+    shortName: 'OPERATIONS',
     icon: Layers,
     mandate:
       'Ensuring absolute precision, seamless timelines, uncompromised quality assurance, and frictionless execution.',
@@ -56,6 +62,8 @@ const disciplines: Discipline[] = [
     id: 'biz-dev-client',
     code: '03',
     name: 'BUSINESS DEVELOPMENT & CLIENT RELATIONS',
+    tabName: 'BUSINESS & CLIENTS',
+    shortName: 'BIZ DEV',
     icon: Users,
     mandate:
       'Cultivating deep, consultative partnerships with client leadership based on mutual trust and transparent dialogue.',
@@ -72,6 +80,8 @@ const disciplines: Discipline[] = [
     id: 'business-finance',
     code: '04',
     name: 'BUSINESS & FINANCE',
+    tabName: 'BUSINESS & FINANCE',
+    shortName: 'FINANCE',
     icon: TrendingUp,
     mandate:
       'Aligning creative investments with commercial discipline, capital efficiency, and measurable enterprise value.',
@@ -131,34 +141,34 @@ export default function FourDisciplines({}: FourDisciplinesProps) {
       className="relative h-[320vh] bg-[#F5F2EA] transition-colors duration-1000"
     >
       {/* Sticky Viewport */}
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-4 md:px-8 lg:px-12 py-10 md:py-14 overflow-hidden">
-        <div className="max-w-7xl w-full mx-auto flex flex-col justify-between h-full max-h-[860px]">
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-3 sm:px-6 md:px-8 lg:px-12 3xl:px-20 py-4 sm:py-6 md:py-10 3xl:py-16 overflow-hidden">
+        <div className="tv-container w-full mx-auto flex flex-col justify-between h-full max-h-[860px] 2xl:max-h-[960px] 3xl:max-h-[1250px] 4xl:max-h-[1550px]">
           {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#292A28]/15 shrink-0">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 sm:gap-4 pb-3 sm:pb-5 border-b border-[#292A28]/15 shrink-0">
             <div>
-              <div className="text-[10px] tracking-[0.3em] uppercase text-[#41413D]/70 font-mono mb-1.5 flex items-center gap-2">
+              <div className="text-[9px] sm:text-[10px] 3xl:text-xs tracking-[0.3em] uppercase text-[#41413D]/70 font-mono mb-1 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#292A28]" />
                 <span>08 // INTERNAL ECOSYSTEM</span>
               </div>
-              <h2 className="font-display-luxury text-2xl sm:text-4xl md:text-5xl text-[#292A28] leading-[0.98]">
+              <h2 className="font-display-luxury text-xl sm:text-3xl md:text-4xl lg:text-5xl 3xl:text-7xl text-[#292A28] leading-[0.98]">
                 FOUR DISCIPLINES. ONE TEAM.
               </h2>
             </div>
 
             {/* Quick Controllers */}
-            <div className="flex items-center gap-3 shrink-0">
-              <span className="font-mono text-xs text-[#41413D]">
+            <div className="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+              <span className="font-mono text-[11px] sm:text-xs 3xl:text-sm text-[#41413D]">
                 DISCIPLINE 0{activeDisciplineIndex + 1} / 0{disciplines.length}
               </span>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
                 <button
                   type="button"
                   onClick={() => scrollToDiscipline(Math.max(0, activeDisciplineIndex - 1))}
                   disabled={activeDisciplineIndex === 0}
-                  className="w-9 h-9 rounded-full border border-[#292A28]/25 flex items-center justify-center text-[#292A28] disabled:opacity-25 hover:bg-[#EEE9DE] transition-colors cursor-pointer"
+                  className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 3xl:w-11 3xl:h-11 rounded-full border border-[#292A28]/25 flex items-center justify-center text-[#292A28] disabled:opacity-25 hover:bg-[#EEE9DE] transition-colors cursor-pointer"
                   aria-label="Previous discipline"
                 >
-                  <ArrowLeft className="w-3.5 h-3.5" />
+                  <ArrowLeft className="w-3 h-3 sm:w-3.5 sm:h-3.5 3xl:w-4 3xl:h-4" />
                 </button>
                 <button
                   type="button"
@@ -166,18 +176,18 @@ export default function FourDisciplines({}: FourDisciplinesProps) {
                     scrollToDiscipline(Math.min(disciplines.length - 1, activeDisciplineIndex + 1))
                   }
                   disabled={activeDisciplineIndex === disciplines.length - 1}
-                  className="w-9 h-9 rounded-full border border-[#292A28] bg-[#292A28] text-[#F5F2EA] flex items-center justify-center disabled:opacity-25 hover:bg-[#41413D] transition-colors cursor-pointer"
+                  className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 3xl:w-11 3xl:h-11 rounded-full border border-[#292A28] bg-[#292A28] text-[#F5F2EA] flex items-center justify-center disabled:opacity-25 hover:bg-[#41413D] transition-colors cursor-pointer"
                   aria-label="Next discipline"
                 >
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 3xl:w-4 3xl:h-4" />
                 </button>
               </div>
             </div>
           </div>
 
           {/* 4 Disciplines Selector Tabs */}
-          <div className="py-4 shrink-0">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
+          <div className="py-2 sm:py-3 md:py-4 shrink-0">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-1.5 sm:gap-2.5 md:gap-3">
               {disciplines.map((d, idx) => {
                 const isSelected = activeDisciplineIndex === idx;
                 const ItemIcon = d.icon;
@@ -186,28 +196,34 @@ export default function FourDisciplines({}: FourDisciplinesProps) {
                     key={d.id}
                     type="button"
                     onClick={() => scrollToDiscipline(idx)}
-                    className={`text-left p-3 sm:p-4 rounded-xl border transition-all duration-300 cursor-pointer flex items-center justify-between ${
+                    className={`text-left p-2 sm:p-3 md:p-4 rounded-xl sm:rounded-2xl border transition-all duration-300 cursor-pointer flex flex-col justify-between overflow-hidden relative group min-h-[58px] sm:min-h-[72px] md:min-h-[82px] 3xl:min-h-[105px] ${
                       isSelected
-                        ? 'border-[#292A28] bg-[#EEE9DE] shadow-xs'
-                        : 'border-[#292A28]/10 bg-[#F5F2EA] hover:bg-[#EEE9DE]/50 hover:border-[#292A28]/25'
+                        ? 'border-[#292A28] bg-[#EEE9DE] shadow-xs ring-1 ring-[#292A28]/20'
+                        : 'border-[#292A28]/15 bg-[#F5F2EA] hover:bg-[#EEE9DE]/60 hover:border-[#292A28]/30'
                     }`}
                   >
-                    <div>
-                      <span className="font-mono text-[10px] text-[#41413D]/70 tracking-wider">
+                    {/* Top Row: Code and Icon cleanly separated at opposite corners */}
+                    <div className="flex items-center justify-between w-full mb-0.5 sm:mb-1">
+                      <span className="font-mono text-[8.5px] sm:text-[9.5px] md:text-[10px] 3xl:text-xs text-[#41413D]/70 tracking-wider">
                         {d.code} {'//'}
                       </span>
-                      <div className="font-display-luxury text-sm sm:text-base text-[#292A28] font-medium tracking-wide truncate mt-0.5">
-                        {d.name}
+                      <ItemIcon className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 3xl:w-5 3xl:h-5 text-[#292A28] shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" />
+                    </div>
+
+                    {/* Bottom Row: Dynamic Typography that never overflows */}
+                    <div className="w-full min-w-0">
+                      <div className="font-display-luxury text-[11px] xs:text-xs sm:text-sm lg:text-base 3xl:text-xl text-[#292A28] font-medium tracking-wide leading-[1.15] break-words line-clamp-2">
+                        <span className="hidden xs:inline">{d.tabName}</span>
+                        <span className="xs:hidden">{d.shortName}</span>
                       </div>
                     </div>
-                    <ItemIcon className="w-4 h-4 text-[#292A28] shrink-0 ml-2" />
                   </button>
                 );
               })}
             </div>
 
             {/* Continuous Timeline Bar */}
-            <div className="w-full h-1 bg-[#292A28]/10 rounded-full mt-3 overflow-hidden">
+            <div className="w-full h-1 bg-[#292A28]/10 rounded-full mt-2 sm:mt-3 overflow-hidden">
               <motion.div
                 style={{ width: progressBarWidth }}
                 className="h-full bg-[#292A28] rounded-full transition-all duration-75"
@@ -232,29 +248,29 @@ export default function FourDisciplines({}: FourDisciplinesProps) {
                   scale: 0.985,
                 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-10 p-6 md:p-8 lg:p-10 rounded-3xl border border-[#292A28]/15 h-full max-h-[580px] overflow-hidden"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 md:gap-10 p-4 sm:p-6 md:p-8 lg:p-10 3xl:p-14 rounded-2xl sm:rounded-3xl border border-[#292A28]/15 h-full max-h-[460px] sm:max-h-[540px] md:max-h-[580px] 3xl:max-h-[800px] overflow-hidden shadow-xs"
                 style={{ backgroundColor: activeDiscipline.bg }}
               >
                 {/* Left Discipline Metadata */}
-                <div className="lg:col-span-7 flex flex-col justify-between space-y-4 overflow-y-auto pr-2 no-scrollbar">
+                <div className="lg:col-span-7 flex flex-col justify-between space-y-3 sm:space-y-4 overflow-y-auto pr-1 sm:pr-2 no-scrollbar">
                   <div>
-                    <div className="flex items-center gap-2 text-[10px] font-mono tracking-[0.25em] text-[#292A28]/70 uppercase pb-2 border-b border-[#292A28]/15 mb-3">
+                    <div className="flex items-center gap-2 text-[9px] sm:text-[10px] 3xl:text-xs font-mono tracking-[0.25em] text-[#292A28]/70 uppercase pb-1.5 sm:pb-2 border-b border-[#292A28]/15 mb-2 sm:mb-3">
                       <IconComponent className="w-3.5 h-3.5" />
                       <span>DISCIPLINE {activeDiscipline.code}</span>
                       <span>&bull;</span>
                       <span>COLLABORATIVE CORE</span>
                     </div>
 
-                    <h3 className="font-display-luxury text-2xl sm:text-4xl md:text-5xl text-[#292A28] leading-tight mb-3">
+                    <h3 className="font-display-luxury text-xl sm:text-3xl md:text-4xl lg:text-5xl 3xl:text-6xl text-[#292A28] leading-tight mb-2 sm:mb-3">
                       {activeDiscipline.name}
                     </h3>
 
-                    <p className="font-serif-editorial text-base sm:text-xl text-[#292A28] italic leading-snug mb-3">
+                    <p className="font-serif-editorial text-xs sm:text-base md:text-lg lg:text-xl 3xl:text-2xl text-[#292A28] italic leading-snug mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none">
                       {activeDiscipline.mandate}
                     </p>
 
-                    <div className="p-3.5 rounded-xl bg-[#F5F2EA]/80 border border-[#292A28]/10 text-xs sm:text-sm text-[#41413D] leading-relaxed">
-                      <span className="font-mono text-[10px] uppercase font-semibold text-[#292A28] block mb-1">
+                    <div className="p-2.5 sm:p-3.5 rounded-xl bg-[#F5F2EA]/80 border border-[#292A28]/10 text-[11px] sm:text-xs md:text-sm 3xl:text-base text-[#41413D] leading-relaxed">
+                      <span className="font-mono text-[9px] sm:text-[10px] 3xl:text-xs uppercase font-semibold text-[#292A28] block mb-0.5 sm:mb-1">
                         TEAM SYNERGY:
                       </span>
                       {activeDiscipline.synergy}
@@ -262,15 +278,15 @@ export default function FourDisciplines({}: FourDisciplinesProps) {
                   </div>
 
                   {/* Focus Areas */}
-                  <div className="pt-3 border-t border-[#292A28]/15">
-                    <div className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#292A28] font-semibold mb-2">
+                  <div className="pt-2.5 sm:pt-3 border-t border-[#292A28]/15">
+                    <div className="text-[9px] sm:text-[10px] 3xl:text-xs font-mono tracking-[0.2em] uppercase text-[#292A28] font-semibold mb-1.5 sm:mb-2">
                       AREAS OF FOCUS & OVERSIGHT:
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2">
                       {activeDiscipline.focus.map((item) => (
                         <div
                           key={item}
-                          className="flex items-start gap-2 text-xs text-[#292A28]"
+                          className="flex items-start gap-1.5 sm:gap-2 text-[11px] sm:text-xs 3xl:text-sm text-[#292A28]"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-[#292A28] mt-1 shrink-0" />
                           <span className="font-light tracking-wide">{item}</span>
@@ -282,25 +298,25 @@ export default function FourDisciplines({}: FourDisciplinesProps) {
 
                 {/* Right Aesthetic Pillar Graphic */}
                 <div className="hidden lg:flex lg:col-span-5 flex-col items-center justify-center">
-                  <div className="w-full h-full max-h-[460px] rounded-2xl bg-[#F5F2EA]/75 border border-[#292A28]/15 p-8 flex flex-col justify-between">
-                    <div className="flex justify-between items-center text-xs font-mono text-[#41413D]/70">
+                  <div className="w-full h-full max-h-[460px] 3xl:max-h-[600px] rounded-2xl bg-[#F5F2EA]/75 border border-[#292A28]/15 p-6 sm:p-8 3xl:p-12 flex flex-col justify-between">
+                    <div className="flex justify-between items-center text-xs 3xl:text-sm font-mono text-[#41413D]/70">
                       <span>INTERNAL PILLAR // {activeDiscipline.code}</span>
-                      <IconComponent className="w-5 h-5 text-[#292A28]" />
+                      <IconComponent className="w-5 h-5 3xl:w-6 3xl:h-6 text-[#292A28]" />
                     </div>
 
-                    <div className="text-center py-8">
-                      <div className="w-20 h-20 rounded-full border border-dashed border-[#292A28]/35 flex items-center justify-center mx-auto mb-4 bg-[#EEE9DE]/60">
-                        <IconComponent className="w-8 h-8 text-[#292A28]" />
+                    <div className="text-center py-6 sm:py-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 3xl:w-28 3xl:h-28 rounded-full border border-dashed border-[#292A28]/35 flex items-center justify-center mx-auto mb-4 bg-[#EEE9DE]/60">
+                        <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 3xl:w-12 3xl:h-12 text-[#292A28]" />
                       </div>
-                      <div className="font-display-luxury text-xl text-[#292A28] font-medium">
+                      <div className="font-display-luxury text-lg sm:text-xl 3xl:text-2xl text-[#292A28] font-medium">
                         {activeDiscipline.name}
                       </div>
-                      <div className="text-[11px] text-[#41413D]/80 font-light mt-1 max-w-xs mx-auto">
+                      <div className="text-[11px] 3xl:text-xs text-[#41413D]/80 font-light mt-1 max-w-xs mx-auto">
                         Operating in continuous unison across Kolkata studio operations.
                       </div>
                     </div>
 
-                    <div className="pt-4 border-t border-[#292A28]/10 flex items-center justify-between text-[10px] font-mono uppercase text-[#41413D]/70">
+                    <div className="pt-4 border-t border-[#292A28]/10 flex items-center justify-between text-[10px] 3xl:text-xs font-mono uppercase text-[#41413D]/70">
                       <span>KOLPO HOUSE</span>
                       <span>ONE STUDIO // ONE VISION</span>
                     </div>
@@ -311,7 +327,7 @@ export default function FourDisciplines({}: FourDisciplinesProps) {
           </div>
 
           {/* Section Footer Scroll Cue */}
-          <div className="pt-3 flex items-center justify-between text-[10px] font-mono uppercase tracking-[0.2em] text-[#41413D]/70 shrink-0">
+          <div className="pt-2 sm:pt-3 flex items-center justify-between text-[9px] sm:text-[10px] 3xl:text-xs font-mono uppercase tracking-[0.2em] text-[#41413D]/70 shrink-0">
             <span>SCROLL DOWN &darr; TO ADVANCE DISCIPLINE</span>
             <span>SCROLL UP &uarr; TO REVERSE DISCIPLINE</span>
           </div>

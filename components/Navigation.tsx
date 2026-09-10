@@ -56,47 +56,47 @@ export default function Navigation({
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out px-4 sm:px-8 py-3.5 sm:py-4 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out px-4 sm:px-8 3xl:px-16 4xl:px-24 py-3.5 sm:py-4 3xl:py-6 ${
           scrolled
-            ? 'bg-[#F5F2EA]/85 backdrop-blur-2xl border-b border-[#292A28]/15 shadow-[0_12px_40px_rgba(41,42,40,0.06)]'
+            ? 'bg-[#F5F2EA]/90 backdrop-blur-2xl border-b border-[#292A28]/15 shadow-[0_12px_40px_rgba(41,42,40,0.06)]'
             : 'bg-[#F5F2EA]/45 backdrop-blur-md border-b border-[#292A28]/10'
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <div className="tv-container flex items-center justify-between gap-4">
           {/* Brand & Rotating Monogram */}
           <a
             href="#"
             id="nav-logo"
-            className="group flex items-center gap-3.5 focus:outline-none shrink-0"
+            className="group flex items-center gap-3.5 3xl:gap-5 focus:outline-none shrink-0"
           >
-            <div className="relative w-8 h-8 flex items-center justify-center">
+            <div className="relative w-8 h-8 3xl:w-12 3xl:h-12 flex items-center justify-center">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
                 className="absolute inset-0 rounded-full border border-dashed border-[#292A28]/35 group-hover:border-[#292A28] transition-colors"
               />
-              <span className="text-[11px] font-medium tracking-tighter text-[#292A28]">
+              <span className="text-[11px] 3xl:text-sm font-medium tracking-tighter text-[#292A28]">
                 KH
               </span>
             </div>
             <div className="flex flex-col overflow-hidden">
-              <span className="font-display-luxury text-lg md:text-xl tracking-[0.18em] text-[#292A28] font-semibold transition-transform group-hover:translate-x-0.5 duration-300">
+              <span className="font-display-luxury text-lg md:text-xl 3xl:text-3xl 4xl:text-4xl tracking-[0.18em] text-[#292A28] font-semibold transition-transform group-hover:translate-x-0.5 duration-300">
                 KOLPO HOUSE
               </span>
-              <span className="hidden sm:inline-block text-[9px] tracking-[0.25em] text-[#41413D]/70 font-sans uppercase -mt-0.5">
+              <span className="hidden sm:inline-block text-[9px] 3xl:text-xs tracking-[0.25em] text-[#41413D]/70 font-sans uppercase -mt-0.5">
                 Kolkata • {kolkataTime || 'IST'}
               </span>
             </div>
           </a>
 
-          {/* Desktop Links with generous spacing */}
-          <nav className="hidden lg:flex items-center gap-8 xl:gap-10">
+          {/* Desktop Links with generous scaling */}
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-10 3xl:gap-16 4xl:gap-20">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 id={`nav-link-${link.label.toLowerCase()}`}
-                className="relative text-[11px] tracking-[0.22em] font-medium text-[#41413D] hover:text-[#292A28] transition-colors py-1 group"
+                className="relative text-[11px] 3xl:text-sm 4xl:text-base tracking-[0.22em] font-medium text-[#41413D] hover:text-[#292A28] transition-colors py-1 group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#292A28] transition-all duration-300 group-hover:w-full" />
@@ -105,10 +105,10 @@ export default function Navigation({
           </nav>
 
           {/* Right Action: Studio Coordinates & Contact */}
-          <div className="flex items-center gap-4 shrink-0">
+          <div className="flex items-center gap-4 3xl:gap-6 shrink-0">
             <a
               href="tel:7003497348"
-              className="hidden xl:inline-block font-mono text-[11px] tracking-wider text-[#41413D] hover:text-[#292A28] transition-colors"
+              className="hidden xl:inline-block font-mono text-[11px] 3xl:text-sm tracking-wider text-[#41413D] hover:text-[#292A28] transition-colors"
             >
               +91 7003497348
             </a>
@@ -118,10 +118,10 @@ export default function Navigation({
               type="button"
               id="nav-contact-button"
               onClick={onOpenContact}
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 text-[11px] tracking-[0.18em] font-medium uppercase rounded-full border border-[#292A28] bg-[#292A28] text-[#F5F2EA] hover:bg-[#41413D] transition-all duration-300 shadow-xs hover:shadow-sm cursor-pointer group"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 3xl:px-7 3xl:py-3 text-[11px] 3xl:text-sm tracking-[0.18em] font-medium uppercase rounded-full border border-[#292A28] bg-[#292A28] text-[#F5F2EA] hover:bg-[#41413D] transition-all duration-300 shadow-xs hover:shadow-sm cursor-pointer group"
             >
               <span>CONTACT</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 3xl:w-4 3xl:h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
 
             {/* Mobile Hamburger */}

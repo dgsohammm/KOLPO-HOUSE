@@ -156,8 +156,8 @@ export default function Chapters({}: ChaptersProps) {
       className="relative h-[320vh] bg-[#F5F2EA] transition-colors duration-1000"
     >
       {/* Sticky Cinematic Viewport */}
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-4 md:px-8 lg:px-12 py-10 md:py-14 overflow-hidden">
-        <div className="max-w-7xl w-full mx-auto flex flex-col justify-between h-full max-h-[880px]">
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-4 md:px-8 lg:px-12 3xl:px-20 py-10 md:py-14 3xl:py-20 overflow-hidden">
+        <div className="tv-container w-full mx-auto flex flex-col justify-between h-full max-h-[880px] 2xl:max-h-[980px] 3xl:max-h-[1250px] 4xl:max-h-[1550px]">
           {/* Section Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#292A28]/15 shrink-0">
             <div>

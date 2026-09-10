@@ -157,16 +157,16 @@ export default function ProcessJourney({}: ProcessJourneyProps) {
       className="relative h-[360vh] bg-[#F5F2EA] transition-colors duration-1000"
     >
       {/* Sticky Viewport */}
-      <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-4 md:px-8 lg:px-12 py-10 md:py-14 overflow-hidden">
-        <div className="max-w-7xl w-full mx-auto flex flex-col justify-between h-full max-h-[860px]">
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-center px-4 md:px-8 lg:px-12 3xl:px-20 py-10 md:py-14 3xl:py-20 overflow-hidden">
+        <div className="tv-container w-full mx-auto flex flex-col justify-between h-full max-h-[860px] 2xl:max-h-[960px] 3xl:max-h-[1250px] 4xl:max-h-[1550px]">
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#292A28]/15 shrink-0">
             <div>
-              <div className="text-[10px] tracking-[0.3em] uppercase text-[#41413D]/70 font-mono mb-1.5 flex items-center gap-2">
+              <div className="text-[10px] 3xl:text-xs tracking-[0.3em] uppercase text-[#41413D]/70 font-mono mb-1.5 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#292A28]" />
                 <span>04 // SPATIAL METHODOLOGY</span>
               </div>
-              <h2 className="font-display-luxury text-2xl sm:text-4xl md:text-5xl text-[#292A28] leading-[0.98]">
+              <h2 className="font-display-luxury text-2xl sm:text-4xl md:text-5xl 3xl:text-7xl text-[#292A28] leading-[0.98]">
                 THE PROCESS JOURNEY
               </h2>
             </div>

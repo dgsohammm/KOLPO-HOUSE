@@ -66,7 +66,7 @@ export default function Hero({ onExploreClick, onOpenContact }: HeroProps) {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-7xl w-full mx-auto flex flex-wrap items-center justify-between gap-4 pt-2 text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-[#41413D]/70 font-sans border-b border-[#292A28]/10 pb-4"
+        className="tv-container w-full mx-auto flex flex-wrap items-center justify-between gap-4 pt-2 text-[10px] md:text-[11px] 3xl:text-sm tracking-[0.25em] uppercase text-[#41413D]/70 font-sans border-b border-[#292A28]/10 pb-4"
       >
         <div className="flex items-center gap-2">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#292A28]" />
@@ -84,7 +84,7 @@ export default function Hero({ onExploreClick, onOpenContact }: HeroProps) {
       </motion.div>
 
       {/* Main Hero Central Composition */}
-      <div className="max-w-7xl w-full mx-auto py-8 md:py-12 my-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div className="tv-container w-full mx-auto py-8 md:py-12 3xl:py-20 4xl:py-28 my-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 3xl:gap-20 4xl:gap-28 items-center">
         {/* Left Column: Big Editorial Typography with Staggered 7-Stage Reveal & Scroll Response */}
         <motion.div
           style={{ y: titleY, opacity: titleOpacity }}
@@ -103,7 +103,7 @@ export default function Hero({ onExploreClick, onOpenContact }: HeroProps) {
             </motion.div>
 
             {/* STAGE 01, 02, 03: KOLPO -> HOUSE -> SETTLE */}
-            <h1 className="font-display-luxury text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.2rem] leading-[0.92] text-[#292A28] tracking-[-0.02em] font-normal mb-6 flex flex-wrap items-baseline gap-x-4">
+            <h1 className="font-display-luxury text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.2rem] 2xl:text-[7.5rem] 3xl:text-[9.5rem] 4xl:text-[12rem] leading-[0.92] text-[#292A28] tracking-[-0.02em] font-normal mb-6 3xl:mb-10 flex flex-wrap items-baseline gap-x-4 3xl:gap-x-8">
               <span className="inline-block overflow-hidden pb-1">
                 <motion.span
                   initial={{ y: '110%', opacity: 0 }}
@@ -135,8 +135,8 @@ export default function Hero({ onExploreClick, onOpenContact }: HeroProps) {
             </h1>
 
             {/* STAGE 04, 05, 06, 07: Tagline 4-beat sequential entrance & scroll response */}
-            <motion.div style={{ y: taglineY }} className="space-y-4 max-w-2xl">
-              <div className="font-serif-editorial text-2xl sm:text-3xl md:text-4xl text-[#292A28] leading-[1.18] font-normal flex flex-wrap items-center gap-x-2.5">
+            <motion.div style={{ y: taglineY }} className="space-y-4 3xl:space-y-8 max-w-2xl 3xl:max-w-4xl 4xl:max-w-5xl">
+              <div className="font-serif-editorial text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl 3xl:text-6xl 4xl:text-7xl text-[#292A28] leading-[1.18] font-normal flex flex-wrap items-center gap-x-2.5">
                 {/* Stage 04: "WE BUILD */}
                 <span className="inline-block overflow-hidden py-0.5">
                   <motion.span
@@ -250,7 +250,7 @@ export default function Hero({ onExploreClick, onOpenContact }: HeroProps) {
             initial={{ opacity: 0, scale: 0.92, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-64 sm:w-72 md:w-80 aspect-[3/4] rounded-t-[100px] rounded-b-[18px] overflow-hidden border border-[#292A28]/15 shadow-[0_20px_50px_rgba(41,42,40,0.08)] bg-[#EEE9DE]"
+            className="relative w-64 sm:w-72 md:w-80 2xl:w-96 3xl:w-[480px] 4xl:w-[580px] aspect-[3/4] rounded-t-[100px] 3xl:rounded-t-[180px] 4xl:rounded-t-[220px] rounded-b-[18px] 3xl:rounded-b-[28px] overflow-hidden border border-[#292A28]/15 shadow-[0_20px_50px_rgba(41,42,40,0.08)] bg-[#EEE9DE]"
           >
             <Image
               src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85"
@@ -276,9 +276,9 @@ export default function Hero({ onExploreClick, onOpenContact }: HeroProps) {
           {/* Natural Section Circular Element: Travels and rotates with the section scroll */}
           <motion.div
             style={{ y: circleY }}
-            className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 md:-left-8 z-10"
+            className="absolute -bottom-5 -left-4 sm:-bottom-6 sm:-left-6 md:-left-8 3xl:-left-12 z-10"
           >
-            <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 flex items-center justify-center bg-[#F5F2EA]/92 backdrop-blur-md rounded-full border border-[#292A28]/20 shadow-lg">
+            <div className="relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 3xl:w-48 3xl:h-48 4xl:w-60 4xl:h-60 flex items-center justify-center bg-[#F5F2EA]/92 backdrop-blur-md rounded-full border border-[#292A28]/20 shadow-lg">
               <motion.div
                 style={{ rotate: circleRotate }}
                 animate={{ rotate: 360 }}
@@ -311,7 +311,7 @@ export default function Hero({ onExploreClick, onOpenContact }: HeroProps) {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.35, ease: [0.16, 1, 0.3, 1] }}
-        className="max-w-7xl w-full mx-auto pt-6 border-t border-[#292A28]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs"
+        className="tv-container w-full mx-auto pt-6 border-t border-[#292A28]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs 3xl:text-base"
       >
         <div className="flex items-center gap-6 text-[11px] tracking-[0.16em] uppercase text-[#41413D]/80">
           <span className="font-medium text-[#292A28]">THE NARRATIVE:</span>
