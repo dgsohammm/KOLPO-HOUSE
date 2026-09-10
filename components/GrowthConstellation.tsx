@@ -146,13 +146,15 @@ export default function GrowthConstellation({ mode }: GrowthConstellationProps) 
   const safeEdgePadding = isMobile ? 8 : 16;
   const maxSafeRadius = (stageWidth / 2) - maxLabelHalfWidth - safeEdgePadding;
 
-  const radius = Math.max(
-    Math.min(maxSafeRadius, is4K ? 240 : isTablet ? 170 : 185),
-    isMobile ? 88 : 120
+  const radius = Math.round(
+    Math.max(
+      Math.min(maxSafeRadius, is4K ? 240 : isTablet ? 170 : 185),
+      isMobile ? 88 : 120
+    )
   );
 
   // Nucleus sizing proportional to constellation radius
-  const nucleusSize = isMobile ? 74 : isTablet ? 94 : is4K ? 154 : 124;
+  const nucleusSize = Math.round(isMobile ? 74 : isTablet ? 94 : is4K ? 154 : 124);
 
   return (
     <section
@@ -182,10 +184,12 @@ export default function GrowthConstellation({ mode }: GrowthConstellationProps) 
           <div className="lg:col-span-7 flex flex-col">
             <div
               ref={stageRef}
+              suppressHydrationWarning
               className="relative w-full flex items-center justify-center p-2 sm:p-6 min-h-[340px] sm:min-h-[420px] md:min-h-[500px] 3xl:min-h-[620px] rounded-3xl border border-[#292A28]/15 bg-[#F5F2EA]/85 backdrop-blur-xs overflow-hidden select-none"
             >
               {/* Dashed Orbital Path: Dynamically sized to exact radius */}
               <div
+                suppressHydrationWarning
                 style={{
                   width: `${radius * 2}px`,
                   height: `${radius * 2}px`,
@@ -195,15 +199,17 @@ export default function GrowthConstellation({ mode }: GrowthConstellationProps) 
 
               {/* Inner Harmonic Guide Ring */}
               <div
+                suppressHydrationWarning
                 style={{
-                  width: `${radius * 1.32}px`,
-                  height: `${radius * 1.32}px`,
+                  width: `${Math.round(radius * 1.32)}px`,
+                  height: `${Math.round(radius * 1.32)}px`,
                 }}
                 className="absolute rounded-full border border-[#292A28]/10 pointer-events-none transition-all duration-300"
               />
 
               {/* Central Nucleus Node: KOLPO HOUSE */}
               <motion.div
+                suppressHydrationWarning
                 style={{
                   width: `${nucleusSize}px`,
                   height: `${nucleusSize}px`,
@@ -223,11 +229,11 @@ export default function GrowthConstellation({ mode }: GrowthConstellationProps) 
                 </span>
               </motion.div>
 
-              {/* Orbiting Satellite Nodes: Mathematically centered with calc(-50% + x) */}
+              {/* Orbiting Satellite Nodes: Centered with translate(-50%, -50%) translate(x, y) */}
               {systemNodes.map((node) => {
                 const rad = (node.angle * Math.PI) / 180;
-                const x = Math.cos(rad) * radius;
-                const y = Math.sin(rad) * radius;
+                const x = Math.round(Math.cos(rad) * radius);
+                const y = Math.round(Math.sin(rad) * radius);
                 const isSelected = node.id === activeNodeId;
 
                 return (
@@ -236,10 +242,11 @@ export default function GrowthConstellation({ mode }: GrowthConstellationProps) 
                     type="button"
                     id={`constellation-node-${node.id}`}
                     onClick={() => setActiveNodeId(node.id)}
+                    suppressHydrationWarning
                     style={{
                       left: '50%',
                       top: '50%',
-                      transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(${
+                      transform: `translate(-50%, -50%) translate(${x}px, ${y}px) scale(${
                         isSelected ? 1.08 : 1
                       })`,
                     }}

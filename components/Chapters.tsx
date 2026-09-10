@@ -207,8 +207,8 @@ export default function Chapters({}: ChaptersProps) {
           </div>
 
           {/* Chapter Tabs / Progress Bar */}
-          <div className="py-4 shrink-0">
-            <div className="grid grid-cols-4 gap-2 md:gap-3">
+          <div className="py-2.5 sm:py-4 shrink-0">
+            <div className="grid grid-cols-4 gap-1.5 sm:gap-2.5 md:gap-3">
               {chapters.map((chapter, idx) => {
                 const isActive = activeChapterIndex === idx;
                 return (
@@ -216,19 +216,19 @@ export default function Chapters({}: ChaptersProps) {
                     key={chapter.id}
                     type="button"
                     onClick={() => scrollToChapter(idx)}
-                    className={`text-left p-2.5 sm:p-3.5 rounded-xl border transition-all duration-300 cursor-pointer relative overflow-hidden ${
+                    className={`text-left p-1.5 xs:p-2 sm:p-3.5 rounded-lg sm:rounded-xl border transition-all duration-300 cursor-pointer relative overflow-hidden ${
                       isActive
-                        ? 'border-[#292A28] bg-[#EEE9DE] shadow-xs'
+                        ? 'border-[#292A28] bg-[#EEE9DE] shadow-xs ring-1 ring-[#292A28]/20'
                         : 'border-[#292A28]/10 bg-transparent hover:border-[#292A28]/30 hover:bg-[#EEE9DE]/40'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-[10px] sm:text-xs text-[#41413D]/70 tracking-wider">
+                      <span className="font-mono text-[8.5px] xs:text-[9.5px] sm:text-xs text-[#41413D]/70 tracking-wider">
                         {chapter.number}
                       </span>
                       {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#292A28]" />}
                     </div>
-                    <div className="font-display-luxury text-sm sm:text-lg md:text-xl text-[#292A28] font-medium tracking-wide truncate mt-0.5">
+                    <div className="font-display-luxury text-[10px] xs:text-xs sm:text-base md:text-lg lg:text-xl text-[#292A28] font-medium tracking-wide truncate mt-0.5 leading-tight">
                       {chapter.name}
                     </div>
                     {isActive && (

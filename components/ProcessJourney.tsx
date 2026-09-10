@@ -208,8 +208,8 @@ export default function ProcessJourney({}: ProcessJourneyProps) {
           </div>
 
           {/* 5-Step Process Indicator Tabs */}
-          <div className="py-4 shrink-0">
-            <div className="grid grid-cols-5 gap-2 md:gap-3">
+          <div className="py-2.5 sm:py-4 shrink-0">
+            <div className="grid grid-cols-5 gap-1 xs:gap-1.5 sm:gap-2.5 md:gap-3">
               {processStages.map((st, idx) => {
                 const isActive = currentStageIdx === idx;
                 return (
@@ -217,19 +217,19 @@ export default function ProcessJourney({}: ProcessJourneyProps) {
                     key={st.step}
                     type="button"
                     onClick={() => scrollToStage(idx)}
-                    className={`text-left p-2 sm:p-3 rounded-xl border transition-all duration-300 cursor-pointer relative overflow-hidden ${
+                    className={`text-left p-1 xs:p-1.5 sm:p-3 rounded-lg sm:rounded-xl border transition-all duration-300 cursor-pointer relative overflow-hidden ${
                       isActive
-                        ? 'border-[#292A28] bg-[#EEE9DE] shadow-xs'
+                        ? 'border-[#292A28] bg-[#EEE9DE] shadow-xs ring-1 ring-[#292A28]/20'
                         : 'border-[#292A28]/10 bg-transparent hover:border-[#292A28]/30 hover:bg-[#EEE9DE]/40'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-[10px] sm:text-xs text-[#41413D]/70 tracking-wider">
+                      <span className="font-mono text-[8px] xs:text-[9px] sm:text-xs text-[#41413D]/70 tracking-wider">
                         {st.step}
                       </span>
                       {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#292A28]" />}
                     </div>
-                    <div className="font-display-luxury text-xs sm:text-base md:text-lg text-[#292A28] font-medium tracking-wide truncate mt-0.5">
+                    <div className="font-display-luxury text-[9px] xs:text-[10px] sm:text-sm md:text-base lg:text-lg text-[#292A28] font-medium tracking-wide truncate mt-0.5 leading-tight">
                       {st.name}
                     </div>
                     {isActive && (

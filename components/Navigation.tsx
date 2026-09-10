@@ -83,7 +83,10 @@ export default function Navigation({
               <span className="font-display-luxury text-lg md:text-xl 3xl:text-3xl 4xl:text-4xl tracking-[0.18em] text-[#292A28] font-semibold transition-transform group-hover:translate-x-0.5 duration-300">
                 KOLPO HOUSE
               </span>
-              <span className="hidden sm:inline-block text-[9px] 3xl:text-xs tracking-[0.25em] text-[#41413D]/70 font-sans uppercase -mt-0.5">
+              <span
+                suppressHydrationWarning
+                className="hidden sm:inline-block text-[9px] 3xl:text-xs tracking-[0.25em] text-[#41413D]/70 font-sans uppercase -mt-0.5"
+              >
                 Kolkata • {kolkataTime || 'IST'}
               </span>
             </div>

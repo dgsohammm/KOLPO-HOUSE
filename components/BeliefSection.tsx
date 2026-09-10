@@ -68,7 +68,7 @@ export default function BeliefSection({ mode }: BeliefSectionProps) {
         </motion.div>
 
         {/* 4 Pillars of Individual Brand Identity */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 md:gap-4 pt-4">
           {fourPillars.map((p, i) => (
             <motion.div
               key={p.title}
@@ -76,15 +76,17 @@ export default function BeliefSection({ mode }: BeliefSectionProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="p-6 rounded-2xl border border-[#292A28]/15 text-left flex flex-col justify-between h-44 hover:shadow-xs transition-shadow"
+              className="p-3.5 xs:p-4 sm:p-5 lg:p-6 rounded-2xl border border-[#292A28]/15 text-left flex flex-col justify-between min-h-[140px] xs:min-h-[155px] sm:min-h-[175px] lg:h-48 hover:shadow-xs transition-shadow overflow-hidden"
               style={{ backgroundColor: p.bg }}
             >
-              <div className="font-mono text-xs text-[#292A28]/50">0{i + 1} {'//'}</div>
-              <div>
-                <div className="font-display-luxury text-2xl sm:text-3xl text-[#292A28] mb-1">
+              <div className="font-mono text-[9px] xs:text-[10px] sm:text-xs text-[#292A28]/60">
+                0{i + 1} {'//'}
+              </div>
+              <div className="w-full min-w-0">
+                <div className="font-display-luxury text-sm xs:text-base sm:text-xl lg:text-2xl xl:text-3xl 3xl:text-4xl text-[#292A28] mb-1 font-medium tracking-tight leading-[1.1] break-words">
                   {p.title}
                 </div>
-                <div className="text-[11px] text-[#41413D] leading-snug font-light">
+                <div className="text-[10px] xs:text-[11px] sm:text-xs 3xl:text-sm text-[#41413D] leading-snug font-light">
                   {p.desc}
                 </div>
               </div>
