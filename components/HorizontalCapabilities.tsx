@@ -11,7 +11,6 @@ interface HorizontalCapabilitiesProps {
 
 interface World {
   id: string;
-  
   title: string;
   essence: string;
   narrative: string;
@@ -197,7 +196,7 @@ export default function HorizontalCapabilities({}: HorizontalCapabilitiesProps) 
                     }`}
                   >
                     <div className="flex items-center justify-between text-[10px] font-mono text-[#41413D]/70">
-                      <span></span>
+                      <span>0{idx + 1}</span>
                       {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#292A28]" />}
                     </div>
                     <div className="font-display-luxury text-sm sm:text-base text-[#292A28] font-medium truncate mt-0.5">
@@ -237,7 +236,7 @@ export default function HorizontalCapabilities({}: HorizontalCapabilitiesProps) 
                     <div className="lg:w-1/2 flex flex-col justify-between space-y-4 overflow-y-auto pr-2 no-scrollbar">
                       <div>
                         <div className="flex items-center justify-between text-[10px] font-mono tracking-[0.25em] text-[#292A28]/70 uppercase pb-2 border-b border-[#292A28]/15 mb-3">
-                          <span>WORLD // {w.num}</span>
+                          <span>WORLD // 0{index + 1}</span>
                           <span>ATMOSPHERIC DOMAIN</span>
                         </div>
 
@@ -281,7 +280,7 @@ export default function HorizontalCapabilities({}: HorizontalCapabilitiesProps) 
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#292A28]/50 via-transparent to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4 text-[#F5F2EA] flex items-center justify-between text-[10px] font-mono tracking-[0.2em] uppercase">
-                        <span>SPATIAL CAPABILITY // {w.num}</span>
+                        <span>SPATIAL CAPABILITY // 0{index + 1}</span>
                         <span>{w.title} DOMAIN</span>
                       </div>
                     </div>
